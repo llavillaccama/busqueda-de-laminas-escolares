@@ -96,7 +96,7 @@ $('.resultado').html("");
         function (transaction, result) {
           for (var i=0; i < result.rows.length; i++) {
             var row = result.rows.item(i);
-            $('.resultado').append('<div class="col-sm-6 col-md-4"> <div class="thumbnail"> <h3>'+ row.nombre +'</h3>  <img src="'+url+ '/images/'+row.imagen +'" alt="'+ row.nombre+'"><div class = "numero">'+row.numero+'</div> </div> </div>')
+            $('.resultado').append('<div class="col-sm-6 col-md-4"> <div class="thumbnail"> <h3>'+ row.nombre +'</h3>  <img src="/images/'+row.imagen +'" alt="'+ row.nombre+'"><div class = "numero">'+row.numero+'</div> </div> </div>')
           }
         },
         errorHandler
