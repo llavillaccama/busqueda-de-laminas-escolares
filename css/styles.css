@@ -1,0 +1,21 @@
+.main-menu{background: yellow none repeat scroll 0 0; left: -126px; position: absolute; top: 49px;transition: all 0.5s;}
+.main-menu.active{left: 0;}
+.main-menu ul{} 
+.main-menu ul li{width: 100%;}
+.main-menu ul li a{font-weight: bold; margin: 0 auto; text-align: left; width: 100%;}
+.main-menu ul li a span.center{display: inline-block; font-weight: normal; padding-left: 10px; text-align: center; text-transform: uppercase;}
+.main-menu ul li a:hover{}
+
+
+.resultado h3{margin:0;background: #31a5c8 none repeat scroll 0 0; border-radius: 5px; color: #fff; font-size: 12px; font-weight: bold; height: 30px; margin-bottom: 10px; overflow: hidden; padding: 10px;}
+.resultado .numero{background: #31a5c8 none repeat scroll 0 0; border: 2px solid #fff; border-radius: 50%; bottom: 26px; color: #fff; font-size: 12px; height: 35px; line-height: 33px; position: absolute; right: 26px; text-align: center; width: 35px; z-index: 5;}
+
+
+.icon-menu{font-size: 35px; height: 40px; margin: 4px; text-align: center; width: 40px;cursor: pointer;}
+
+
+
+
+
+
+
