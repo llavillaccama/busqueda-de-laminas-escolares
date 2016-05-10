@@ -27,7 +27,8 @@
 .home-menu{float: right;font-size: 35px; height: 40px; margin: 4px; text-align: center; width: 40px;cursor: pointer;}
 
 
-
+.lamina-detalle .lamina{padding: 5px;}
+.lamina-detalle .lamina img{width: 100%;height: auto;}
 
 
 

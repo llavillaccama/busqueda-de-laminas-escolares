@@ -117,7 +117,7 @@ function categoriaschange(){
       function (transaction, result) {
         for (var i=0; i < result.rows.length; i++) {
           var row = result.rows.item(i);
-          $('.lamina-categoria .resultado').append('<div class="col-sm-6 col-md-4"> <div class="thumbnail"> <h3>'+ row.nombre +'</h3>  <img src="images/'+row.imagen +'" alt="'+ row.nombre+'"><div class = "numero">'+row.numero+'</div> </div> </div>');
+          $('.lamina-categoria .resultado').append('<div class="col-sm-6 col-md-4"> <a href="detalle.html?id='+row.id+'"><div class="thumbnail"> <h3>'+ row.nombre +'</h3>  <img src="images/'+row.imagen +'" alt="'+ row.nombre+'"><div class = "numero">'+row.numero+'</div> </div></a> </div>');
         }
       },
       errorHandler
@@ -143,7 +143,7 @@ $('#buscarlamina').submit(function(event) {
         function (transaction, result) {
           for (var i=0; i < result.rows.length; i++) {
             var row = result.rows.item(i);
-            $('.resultado').append('<div class="col-sm-6 col-md-4"> <div class="thumbnail"> <h3>'+ row.nombre +'</h3>  <img src="images/'+row.imagen +'" alt="'+ row.nombre+'"><div class = "numero">'+row.numero+'</div> </div> </div>')
+            $('.resultado').append('<div class="col-sm-6 col-md-4"> <a href="detalle.html?id='+row.id+'"><div class="thumbnail"> <h3>'+ row.nombre +'</h3>  <img src="images/'+row.imagen +'" alt="'+ row.nombre+'"><div class = "numero">'+row.numero+'</div> </div></a> </div>')
           }
         },
         errorHandler
@@ -157,7 +157,31 @@ $('#buscarlamina').submit(function(event) {
 
 
 
+$.urlParam = function(name){
+  var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+  return results[1] || 0;
+}
 
+console.log($.urlParam('id'));
+
+var id_lamina = $.urlParam('id');
+
+
+db.transaction(
+  function(transaction) {
+    transaction.executeSql(
+      'SELECT * FROM lamina WHERE id ='+id_lamina+';',
+      [],
+      function (transaction, result) {
+        for (var i=0; i < result.rows.length; i++) {
+          var row = result.rows.item(i);
+            $('.lamina-detalle .resultado').append('<div class="lamina"><h3>'+ row.nombre +'</h3>  <img src="images/'+row.imagen +'" alt="'+ row.nombre+'"><div class = "numero">'+row.numero+'</div> </div>')
+        }
+      },
+      errorHandler
+      );
+  }
+  );
 });
 
 
