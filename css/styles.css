@@ -91,10 +91,11 @@
  .profile .card.hovercard .avatar {position: relative; top: -50px; margin-bottom: -50px; }
 .profile .card.hovercard .avatar img {width: 100px; height: 100px; max-width: 100px; max-height: 100px; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%; border: 5px solid rgba(255,255,255,0.5); }
  .profile .card.hovercard .info {padding: 4px 8px 10px; } 
- .profile .card.hovercard .info .title {margin-bottom: 4px; font-size: 24px; line-height: 1; color: #262626; vertical-align: middle; } 
+ .profile .card.hovercard .info .title {color: #262626; font-size: 19px; line-height: 1; margin-bottom: 10px;}
  .profile .card.hovercard .info .desc {overflow: hidden; font-size: 12px; line-height: 20px; color: #737373; text-overflow: ellipsis; } 
  .profile .card.hovercard .bottom {padding: 0 20px; margin-bottom: 17px; }
 .profile .btn{ border-radius: 50%; width:32px; height:32px; line-height:18px;  }
 .profile {border-radius: 5px; box-shadow: 2px 2px 5px gray; margin: 0 auto; width: 265px;}
 
-
+.profile .list-group-item{color: gray; padding-left: 48px; text-align: left;}
+.profile .list-group-item span{color: #286090; font-size: 20px; left: 14px; position: absolute; top: 10px;}
