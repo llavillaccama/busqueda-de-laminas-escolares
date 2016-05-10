@@ -13,9 +13,12 @@
 
 .icon-menu{font-size: 35px; height: 40px; margin: 4px; text-align: center; width: 40px;cursor: pointer;}
 
+#buscarlamina{margin: 0;padding: 0;}
+#buscarlamina input,
+#buscarlamina button{float: left; font-size: 12px; height: 30px; padding: 4px;}
+#buscarlamina button{ margin-left: 4px;}
+.panel-body{padding: 10px;}
 
-
-
-
+.panel-primary{margin: 0 auto; width: 300px;margin-bottom: 15px;}
 
 
