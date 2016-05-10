@@ -5,11 +5,12 @@
 	version   = "1.0.0">
 	<name>Buscador de Laminas Escolares</name>
 	<description>
-		Encuentra tu lamina rapido y seguro sin internet instalando el app en tu celular o tablet
+		Encuentra tu lamina rapido y seguro sin internet instalando el app en tu celular o tablet.
 	</description>
 	<author href="http://www.soporte.website" email="llavillaccama@gmail.com">
 		Julio Cesar Llavilla Ccama
 	</author>
+	<icon src="icon.png" />
 	<content src="index.html" />
 	<access origin="*" />
 	<gap:plugin name="org.apache.cordova.inappbrowser"/>
