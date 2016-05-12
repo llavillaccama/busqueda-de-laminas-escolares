@@ -14,5 +14,5 @@
 	<content src="index.html" />
 	<access origin="*" />
 	<gap:plugin name="org.apache.cordova.inappbrowser"/>
-	<feature name="http://api.phonegap.com/1.0/network"/>
+<gap:plugin name="org.apache.cordova.network-information" version="0.2.7" />
 </widget>
