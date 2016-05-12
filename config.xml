@@ -16,5 +16,8 @@
 	<access origin="*" />
 	<gap:plugin name="org.apache.cordova.inappbrowser"/>
 <plugin name="org.apache.cordova.network-information" spec="0.2.15" source="pgb" />
+<plugin name="org.apache.cordova.file" spec="0.2.4" source="pgb" />
+<plugin name="org.apache.cordova.file-transfer" spec="0.3.0" source="pgb" />
+
 
 </widget>
