@@ -80,6 +80,7 @@ jQuery(document).ready(function($) {
    }
    );
    categoriaschange();
+   detallelamina();
  }
 
  function llenarcategorias(){
@@ -151,12 +152,12 @@ $('#buscarlamina').submit(function(event) {
 });
 
 
+function detallelamina(){
+
 
 $.urlParam = function(name){
  var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
- 
  return results[1] || 0;
-
 }
 var id_lamina = $.urlParam('id');
 db.transaction(
@@ -174,10 +175,7 @@ db.transaction(
       );
   }
   );
-
-
-
-
+}
 
 });
 
