@@ -208,6 +208,7 @@ function checkConnection() {
     alert('Connection type: ' + states[networkState]);
 }
 
+checkConnection();
 
 });
 
