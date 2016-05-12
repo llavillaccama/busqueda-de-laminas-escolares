@@ -14,5 +14,5 @@
 	<content src="index.html" />
 	<access origin="*" />
 	<gap:plugin name="org.apache.cordova.inappbrowser"/>
-	<plugin name="NetworkStatus" value="org.apache.cordova.NetworkManager"/>
+	<gap:plugin name="NetworkStatus" value="org.apache.cordova.NetworkManager"/>
 </widget>
