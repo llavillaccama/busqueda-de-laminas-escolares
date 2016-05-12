@@ -2,7 +2,7 @@
 <widget xmlns = "http://www.w3.org/ns/widgets"
 	xmlns:gap = "http://phonegap.com/ns/1.0"
 	id        = "com.phonegap.example"
-	version   = "1.0.0">
+	version   = "1.0.1">
 	<name>Buscador de Laminas Escolares</name>
 	<description>
 		Encuentra tu lamina rapido y seguro sin internet instalando el app en tu celular o tablet.
