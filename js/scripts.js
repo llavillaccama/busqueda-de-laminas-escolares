@@ -213,6 +213,35 @@ function checkConnection() {
 
 checkConnection();
 
+
+
+var fileTransfer = new FileTransfer();
+var uri = encodeURI("http://laminas.soporte.website/lamina.json");
+
+fileTransfer.download(
+    uri,
+    fileURL,
+    function(entry) {
+      alert("done");
+        console.log("download complete: " + entry.toURL());
+    },
+    function(error) {
+        console.log("download error source " + error.source);
+        console.log("download error target " + error.target);
+        console.log("upload error code" + error.code);
+    },
+    false,
+    {
+        headers: {
+            "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
+        }
+    }
+);
+
+
+
+
+
 });
 
 
