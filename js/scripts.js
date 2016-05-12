@@ -193,12 +193,14 @@ db.transaction(
 
 jQuery(document).ready(function($) {
   
-if(navigator.connection.type == Connection.NONE){
-    alert("no conection");
-}else{
-    alert("yes Conection");
-}
+var networkState = navigator.connection.type;
+    if (networkState == Connection.NONE){
+                alert('No Internet');
 
+    }else{
+
+                   alert('Internet Connection there');
+                }
 
 });
 
