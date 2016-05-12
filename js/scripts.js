@@ -30,21 +30,21 @@ jQuery(document).ready(function($) {
       transaction.executeSql(
         'CREATE TABLE IF NOT EXISTS lamina ' +
         ' (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, ' +
-        ' numero INTEGER NULL, nombre TEXT NULL,descripcion TEXT NULL,categoria INTEGER NULL,editorial INTEGER NULL,imagen TEXT NULL);'
-        );
+          ' numero INTEGER NULL, nombre TEXT NULL,descripcion TEXT NULL,categoria INTEGER NULL,editorial INTEGER NULL,imagen TEXT NULL);'
+      );
       transaction.executeSql(
         'CREATE TABLE IF NOT EXISTS categoria ' +
         ' (id INTEGER NOT NULL PRIMARY KEY, ' +
-        ' nombre TEXT NULL);'
-        );
+          ' nombre TEXT NULL);'
+      );
     }
     ); 
-$.getJSON("categoria.json", listarcategorias);
-function listarcategorias(data)
-{
+  $.getJSON("categoria.json", listarcategorias);
+  function listarcategorias(data)
+  {
    db.transaction(
     function(transaction) {
-    $.each(data, function(index, val) {
+      $.each(data, function(index, val) {
         var id = val['id'];
         var nombre = val['nombre'];
         transaction.executeSql(
@@ -54,13 +54,13 @@ function listarcategorias(data)
           errorHandler
           );
       });
-     }
-   );
+    }
+    );
    llenarcategorias();
-}
-$.getJSON("lamina.json", llenarlaminas);
-function llenarlaminas(data)
-{
+ }
+ $.getJSON("lamina.json", llenarlaminas);
+ function llenarlaminas(data)
+ {
    db.transaction(
     function(transaction) {
      $.each(data, function(index, val) {
@@ -77,13 +77,13 @@ function llenarlaminas(data)
         errorHandler
         );
     });
-     }
+   }
    );
    categoriaschange();
-}
+ }
 
-function llenarcategorias(){
-    db.transaction(
+ function llenarcategorias(){
+  db.transaction(
     function(transaction) {
       transaction.executeSql(
         'SELECT * FROM categoria;',
@@ -100,65 +100,63 @@ function llenarcategorias(){
     );
 }
 
+
+
+
+function categoriaschange(){
+  db.transaction(
+    function(transaction) {
+      var id = $('.lamina-categoria select').children(":selected").attr("id");
+      $('.resultado').html("");
+      transaction.executeSql(
+        'SELECT * FROM lamina WHERE categoria ='+ id +';',
+        [],
+        function (transaction, result) {
+          for (var i=0; i < result.rows.length; i++) {
+            var row = result.rows.item(i);
+            $('.lamina-categoria .resultado').append('<div class="col-sm-6 col-md-4"> <a href="detalle.html?id='+row.id+'"><div class="thumbnail"> <h3>'+ row.nombre +'</h3>  <img src="images/'+row.imagen +'" alt="'+ row.nombre+'"><div class = "numero">'+row.numero+'</div> </div></a> </div>');
+          }
+        },
+        errorHandler
+        );
+    }
+    );
+}
+
+$(".lamina-categoria select").change(function() {
+ categoriaschange();
+});
+
+
+
+$('#buscarlamina').submit(function(event) {
+  var name = $('.txt-name').val();
+  $('.resultado').html("");
+  db.transaction(
+    function(transaction) {
+      transaction.executeSql(
+        'SELECT * FROM lamina WHERE nombre LIKE "%'+ name +'%";',
+        [],
+        function (transaction, result) {
+          for (var i=0; i < result.rows.length; i++) {
+            var row = result.rows.item(i);
+            $('.resultado').append('<div class="col-sm-6 col-md-4"> <a href="detalle.html?id='+row.id+'"><div class="thumbnail"> <h3>'+ row.nombre +'</h3>  <img src="images/'+row.imagen +'" alt="'+ row.nombre+'"><div class = "numero">'+row.numero+'</div> </div></a> </div>')
+          }
+        },
+        errorHandler
+        );
+    }
+    );
+  event.preventDefault();
+});
+
+
+
+$.urlParam = function(name){
+ var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
  
+ return results[1] || 0;
 
-
-   function categoriaschange(){
-    db.transaction(
-      function(transaction) {
-        var id = $('.lamina-categoria select').children(":selected").attr("id");
-        $('.resultado').html("");
-        transaction.executeSql(
-          'SELECT * FROM lamina WHERE categoria ='+ id +';',
-          [],
-          function (transaction, result) {
-            for (var i=0; i < result.rows.length; i++) {
-              var row = result.rows.item(i);
-              $('.lamina-categoria .resultado').append('<div class="col-sm-6 col-md-4"> <a href="detalle.html?id='+row.id+'"><div class="thumbnail"> <h3>'+ row.nombre +'</h3>  <img src="images/'+row.imagen +'" alt="'+ row.nombre+'"><div class = "numero">'+row.numero+'</div> </div></a> </div>');
-            }
-          },
-          errorHandler
-          );
-      }
-      );
-  }
-
-  $(".lamina-categoria select").change(function() {
-   categoriaschange();
- });
-
-
-
-  $('#buscarlamina').submit(function(event) {
-    var name = $('.txt-name').val();
-    $('.resultado').html("");
-    db.transaction(
-      function(transaction) {
-        transaction.executeSql(
-          'SELECT * FROM lamina WHERE nombre LIKE "%'+ name +'%";',
-          [],
-          function (transaction, result) {
-            for (var i=0; i < result.rows.length; i++) {
-              var row = result.rows.item(i);
-              $('.resultado').append('<div class="col-sm-6 col-md-4"> <a href="detalle.html?id='+row.id+'"><div class="thumbnail"> <h3>'+ row.nombre +'</h3>  <img src="images/'+row.imagen +'" alt="'+ row.nombre+'"><div class = "numero">'+row.numero+'</div> </div></a> </div>')
-            }
-          },
-          errorHandler
-          );
-      }
-      );
-    event.preventDefault();
-  });
-
-
-
-  $.urlParam = function(name){
-   var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-   if (results) {
-    return results[1] || 0;
-  }else{
-
-  }
 }
 var id_lamina = $.urlParam('id');
 db.transaction(
