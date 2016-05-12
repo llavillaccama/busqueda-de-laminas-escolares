@@ -3,7 +3,7 @@
 	xmlns:gap = "http://phonegap.com/ns/1.0"
 	id        = "com.phonegap.example"
 	version   = "1.0.1">
-	<preference name="phonegap-version" value="4.0.0" />
+	<preference name="phonegap-version" value="5.2.0" />
 
 	<name>Buscador de Laminas Escolares</name>
 	<description>
