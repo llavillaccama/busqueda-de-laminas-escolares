@@ -3,7 +3,6 @@
 	xmlns:gap = "http://phonegap.com/ns/1.0"
 	id        = "com.phonegap.example"
 	version   = "1.0.1">
-	<preference name="phonegap-version" value="cli-5.2.0" />
 
 	<name>Buscador de Laminas Escolares</name>
 	<description>
@@ -17,6 +16,5 @@
 	<access origin="*" />
 	<gap:plugin name="org.apache.cordova.inappbrowser"/>
 <plugin name="org.apache.cordova.network-information" spec="0.2.15" source="pgb" />
-<plugin name="org.apache.cordova.file-transfer" spec="0.4.6" source="pgb" />
 
 </widget>
