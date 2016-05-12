@@ -157,7 +157,9 @@ function detallelamina(){
 
 $.urlParam = function(name){
  var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
- return results[1] || 0;
+ if (results) {
+  return results[1] || 0;
+ }
 }
 var id_lamina = $.urlParam('id');
 db.transaction(
@@ -191,31 +193,11 @@ db.transaction(
 
 jQuery(document).ready(function($) {
   
-
-     document.addEventListener("deviceready", onDeviceReady, false);
-
-    // device APIs are available
-    //
-    function onDeviceReady() {
-        checkConnection();
-    }
-
-        function checkConnection() {
-            var networkState = navigator.connection.type;
-
-            var states = {};
-            states[Connection.UNKNOWN]  = 'Unknown connection';
-            states[Connection.ETHERNET] = 'Ethernet connection';
-            states[Connection.WIFI]     = 'WiFi connection';
-            states[Connection.CELL_2G]  = 'Cell 2G connection';
-            states[Connection.CELL_3G]  = 'Cell 3G connection';
-            states[Connection.CELL_4G]  = 'Cell 4G connection';
-            states[Connection.CELL]     = 'Cell generic connection';
-            states[Connection.NONE]     = 'No network connection';
-
-            alert('Connection type: ' + states[networkState]);
-        }
-
+if(navigator.connection.type == Connection.NONE){
+    alert("no conection");
+}else{
+    alert("yes Conection");
+}
 
 
 });
