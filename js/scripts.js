@@ -194,8 +194,10 @@ db.transaction(
 jQuery(document).ready(function($) {
 
 
+alert("Ejecuta el codigo");
 
 function checkConnection() {
+  alert("entra a la funcion");
     var networkState = navigator.connection.type;
 
     var states = {};
@@ -238,7 +240,7 @@ fileTransfer.download(
     }
 );
 
-
+alert("fin del js");
 
 
 
