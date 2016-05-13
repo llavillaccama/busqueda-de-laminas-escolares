@@ -11,6 +11,8 @@ jQuery(document).ready(function($) {
 });
 
 
+
+
 jQuery(document).ready(function($) {
 
   function errorHandler(transaction, error) {
@@ -193,14 +195,19 @@ db.transaction(
 
 jQuery(document).ready(function($) {
 
+$('.buscador').click(function(event) {
+  var $this = $('#buscarlamina');
+  if ($this.hasClass('active')) {
+    $this.removeClass('active');
+  }else{
+    $this.addClass('active');
+  }
+});
 
-alert("Ejecuta el codigo");
+
 
 function checkConnection() {
-  alert("entra a la funcion");
     var networkState = navigator.connection.type;
-    alert(networkState);
-
     var states = {};
     states[Connection.UNKNOWN]  = 'Unknown connection';
     states[Connection.ETHERNET] = 'Ethernet connection';
@@ -220,16 +227,14 @@ checkConnection();
 
 var fileTransfer = new FileTransfer();
 var uri = encodeURI("http://laminas.soporte.website/lamina.json");
-alert(uri);
+
 fileTransfer.download(
     uri,
     fileURL,
     function(entry) {
-      alert("done");
         console.log("download complete: " + entry.toURL());
     },
     function(error) {
-      alert("error");
         console.log("download error source " + error.source);
         console.log("download error target " + error.target);
         console.log("upload error code" + error.code);
@@ -241,9 +246,6 @@ fileTransfer.download(
         }
     }
 );
-
-alert("fin del js");
-
 
 
 });
