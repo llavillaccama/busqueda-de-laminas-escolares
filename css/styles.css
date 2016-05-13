@@ -13,7 +13,7 @@
 
 .icon-menu{font-size: 35px; height: 40px; margin: 4px; text-align: center; width: 40px;cursor: pointer;float: left;}
 
-#buscarlamina{background: #fff none repeat scroll 0 0; border: 1px solid #d3d3d3; border-radius: 5px; display: none; height: 44px; margin: 0; overflow: hidden; padding: 6px; position: absolute; right: 4px; top: 54px; z-index: 10;}
+#buscarlamina{background: #fff none repeat scroll 0 0; border: 1px solid #d3d3d3; border-radius: 5px; display: none; height: 44px; margin: 0; overflow: hidden; padding: 6px; position: fixed; right: 4px; top: 54px; z-index: 10;}
 #buscarlamina.active{display: block;}
 #buscarlamina input,
 #buscarlamina button{float: left; font-size: 12px; height: 30px; padding: 4px;}

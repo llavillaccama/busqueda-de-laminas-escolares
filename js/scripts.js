@@ -1,4 +1,5 @@
 jQuery(document).ready(function($) {
+
   $( '.main-menu-jc' ).load( "menu.html", function() {
    $('.icon-menu').click(function(event) {
     if ($('.main-menu').hasClass('active')) {
@@ -10,7 +11,6 @@ jQuery(document).ready(function($) {
    openformsearch();
  });
 
-
   function openformsearch(){
     $('.share-icon-home').click(function(event) {
       var $this = $('#buscarlamina');
@@ -21,11 +21,8 @@ jQuery(document).ready(function($) {
       }
     }); 
   }
-  
+
 });
-
-
-
 
 jQuery(document).ready(function($) {
 
@@ -117,9 +114,6 @@ jQuery(document).ready(function($) {
     );
 }
 
-
-
-
 function categoriaschange(){
   db.transaction(
     function(transaction) {
@@ -144,8 +138,6 @@ $(".lamina-categoria select").change(function() {
  categoriaschange();
 });
 
-
-
 $('#buscarlamina').submit(function(event) {
   var name = $('.txt-name').val();
   $('.resultado').html("");
@@ -167,9 +159,7 @@ $('#buscarlamina').submit(function(event) {
   event.preventDefault();
 });
 
-
 function detallelamina(){
-
 
   $.urlParam = function(name){
    var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
@@ -197,27 +187,7 @@ db.transaction(
 
 });
 
-
-
-
-
-
-
-
-
-
-
 jQuery(document).ready(function($) {
-
-
-
-
- 
-
-
-
-
-
 
  function checkConnection() {
   var networkState = navigator.connection.type;
@@ -236,11 +206,8 @@ jQuery(document).ready(function($) {
 
 checkConnection();
 
-
-
 var fileTransfer = new FileTransfer();
 var uri = encodeURI("http://laminas.soporte.website/lamina.json");
-
 fileTransfer.download(
   uri,
   fileURL,
@@ -259,8 +226,6 @@ fileTransfer.download(
     }
   }
   );
-
-
 });
 
 
