@@ -7,7 +7,21 @@ jQuery(document).ready(function($) {
       $('.main-menu').addClass('active');
     }
   });
- });   
+   openformsearch();
+ });
+
+
+  function openformsearch(){
+    $('.share-icon-home').click(function(event) {
+      var $this = $('#buscarlamina');
+      if ($this.hasClass('active')) {
+        $this.removeClass('active');
+      }else{
+        $this.addClass('active');
+      }
+    }); 
+  }
+  
 });
 
 
@@ -32,13 +46,13 @@ jQuery(document).ready(function($) {
       transaction.executeSql(
         'CREATE TABLE IF NOT EXISTS lamina ' +
         ' (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, ' +
-          ' numero INTEGER NULL, nombre TEXT NULL,descripcion TEXT NULL,categoria INTEGER NULL,editorial INTEGER NULL,imagen TEXT NULL);'
-      );
+        ' numero INTEGER NULL, nombre TEXT NULL,descripcion TEXT NULL,categoria INTEGER NULL,editorial INTEGER NULL,imagen TEXT NULL);'
+        );
       transaction.executeSql(
         'CREATE TABLE IF NOT EXISTS categoria ' +
         ' (id INTEGER NOT NULL PRIMARY KEY, ' +
-          ' nombre TEXT NULL);'
-      );
+        ' nombre TEXT NULL);'
+        );
     }
     ); 
   $.getJSON("categoria.json", listarcategorias);
@@ -157,11 +171,11 @@ $('#buscarlamina').submit(function(event) {
 function detallelamina(){
 
 
-$.urlParam = function(name){
- var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
- if (results) {
-  return results[1] || 0;
- }
+  $.urlParam = function(name){
+   var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+   if (results) {
+    return results[1] || 0;
+  }
 }
 var id_lamina = $.urlParam('id');
 db.transaction(
@@ -195,30 +209,29 @@ db.transaction(
 
 jQuery(document).ready(function($) {
 
-$('.buscador').click(function(event) {
-  var $this = $('#buscarlamina');
-  if ($this.hasClass('active')) {
-    $this.removeClass('active');
-  }else{
-    $this.addClass('active');
-  }
-});
 
 
 
-function checkConnection() {
-    var networkState = navigator.connection.type;
-    var states = {};
-    states[Connection.UNKNOWN]  = 'Unknown connection';
-    states[Connection.ETHERNET] = 'Ethernet connection';
-    states[Connection.WIFI]     = 'WiFi connection';
-    states[Connection.CELL_2G]  = 'Cell 2G connection';
-    states[Connection.CELL_3G]  = 'Cell 3G connection';
-    states[Connection.CELL_4G]  = 'Cell 4G connection';
-    states[Connection.CELL]     = 'Cell generic connection';
-    states[Connection.NONE]     = 'No network connection';
+ 
 
-    alert('Connection type: ' + states[networkState]);
+
+
+
+
+
+ function checkConnection() {
+  var networkState = navigator.connection.type;
+  var states = {};
+  states[Connection.UNKNOWN]  = 'Unknown connection';
+  states[Connection.ETHERNET] = 'Ethernet connection';
+  states[Connection.WIFI]     = 'WiFi connection';
+  states[Connection.CELL_2G]  = 'Cell 2G connection';
+  states[Connection.CELL_3G]  = 'Cell 3G connection';
+  states[Connection.CELL_4G]  = 'Cell 4G connection';
+  states[Connection.CELL]     = 'Cell generic connection';
+  states[Connection.NONE]     = 'No network connection';
+
+  alert('Connection type: ' + states[networkState]);
 }
 
 checkConnection();
@@ -229,23 +242,23 @@ var fileTransfer = new FileTransfer();
 var uri = encodeURI("http://laminas.soporte.website/lamina.json");
 
 fileTransfer.download(
-    uri,
-    fileURL,
-    function(entry) {
-        console.log("download complete: " + entry.toURL());
-    },
-    function(error) {
-        console.log("download error source " + error.source);
-        console.log("download error target " + error.target);
-        console.log("upload error code" + error.code);
-    },
-    false,
-    {
-        headers: {
-            "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
-        }
+  uri,
+  fileURL,
+  function(entry) {
+    console.log("download complete: " + entry.toURL());
+  },
+  function(error) {
+    console.log("download error source " + error.source);
+    console.log("download error target " + error.target);
+    console.log("upload error code" + error.code);
+  },
+  false,
+  {
+    headers: {
+      "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
     }
-);
+  }
+  );
 
 
 });
