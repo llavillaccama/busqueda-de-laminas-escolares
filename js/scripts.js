@@ -199,6 +199,7 @@ alert("Ejecuta el codigo");
 function checkConnection() {
   alert("entra a la funcion");
     var networkState = navigator.connection.type;
+    alert(networkState);
 
     var states = {};
     states[Connection.UNKNOWN]  = 'Unknown connection';
@@ -219,7 +220,7 @@ checkConnection();
 
 var fileTransfer = new FileTransfer();
 var uri = encodeURI("http://laminas.soporte.website/lamina.json");
-
+alert(uri);
 fileTransfer.download(
     uri,
     fileURL,
@@ -228,6 +229,7 @@ fileTransfer.download(
         console.log("download complete: " + entry.toURL());
     },
     function(error) {
+      alert("error");
         console.log("download error source " + error.source);
         console.log("download error target " + error.target);
         console.log("upload error code" + error.code);
