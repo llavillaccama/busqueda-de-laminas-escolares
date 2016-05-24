@@ -1,0 +1,105 @@
+.main-menu{background: #F8F8F8; left: -148px; position: absolute; top: 49px;transition: all 0.5s;}
+.main-menu.active{border: 1px solid #d3d3d3; left: -1px; z-index: 999;}
+.main-menu ul{} 
+.main-menu ul li{width: 100%;}
+.main-menu ul li a{font-weight: bold; margin: 0 auto; text-align: left; width: 100%;}
+.main-menu ul li a span.center{display: inline-block; font-weight: normal; padding-left: 10px; text-align: center; text-transform: uppercase;}
+.main-menu ul li a:hover{}
+
+
+.resultado h3{margin:0;background: #31a5c8 none repeat scroll 0 0; border-radius: 5px; color: #fff; font-size: 12px; font-weight: bold; height: 30px; margin-bottom: 10px; overflow: hidden; padding: 10px;}
+.resultado .numero{background: #31a5c8 none repeat scroll 0 0; border: 2px solid #fff; border-radius: 50%; bottom: 26px; color: #fff; font-size: 12px; height: 35px; line-height: 33px; position: absolute; right: 26px; text-align: center; width: 35px; z-index: 5;}
+
+
+.icon-menu{font-size: 35px; height: 40px; margin: 4px; text-align: center; width: 40px;cursor: pointer;float: left;}
+
+#buscarlamina{background: #fff none repeat scroll 0 0; border: 1px solid #d3d3d3; border-radius: 5px; display: none; height: 44px; margin: 0; overflow: hidden; padding: 6px; position: fixed; right: 4px; top: 54px; z-index: 10;}
+#buscarlamina.active{display: block;}
+#buscarlamina input,
+#buscarlamina button{float: left; font-size: 12px; height: 30px; padding: 4px;}
+#buscarlamina button{ margin-left: 4px;}
+.panel-body{padding: 10px;}
+
+.panel-primary{margin: 0 auto; width: 300px;margin-bottom: 15px;}
+
+
+.categoria .container .resultado{padding: 15px;}
+
+.home-menu{float: right;font-size: 35px; height: 40px; margin: 4px; text-align: center; width: 40px;cursor: pointer;}
+
+
+.lamina-detalle .lamina{padding: 5px;}
+.lamina-detalle .lamina img{width: 100%;height: auto;}
+
+
+
+.share-icon-home{display: none;}
+.buscador .share-icon-home{background: #fff none repeat scroll 0 0; border: 1px solid #d3d3d3; border-radius: 7px; color: gray; display: block; float: right; font-size: 25px; height: 42px; margin-top: 2px; padding: 5px; width: 38px;cursor: pointer;z-index: 5;position: relative;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.profile .card {padding-top: 20px; margin: 10px 0 20px 0; background-color: rgba(214, 224, 226, 0.2); border-top-width: 0; border-bottom-width: 2px; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+.profile .card .card-heading {padding: 0 20px; margin: 0; }
+.profile .card .card-heading.simple {font-size: 20px; font-weight: 300; color: #777; border-bottom: 1px solid #e5e5e5; }
+.profile .card .card-heading.image img {display: inline-block; width: 46px; height: 46px; margin-right: 15px; vertical-align: top; border: 0; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%; }
+.profile .card .card-heading.image .card-heading-header {display: inline-block; vertical-align: top; }
+.profile .card .card-heading.image .card-heading-header h3 {margin: 0; font-size: 14px; line-height: 16px; color: #262626; }
+.profile .card .card-heading.image .card-heading-header span {font-size: 12px; color: #999999; }
+.profile .card .card-body {padding: 0 20px; margin-top: 20px; }
+.profile .card .card-media {padding: 0 20px; margin: 0 -14px; }
+.profile .card .card-media img {max-width: 100%; max-height: 100%; }
+.profile .card .card-actions {min-height: 30px; padding: 0 20px 20px 20px; margin: 20px 0 0 0; }
+.profile .card .card-comments {padding: 20px; margin: 0; background-color: #f8f8f8; }
+.profile .card .card-comments .comments-collapse-toggle {padding: 0; margin: 0 20px 12px 20px; }
+.profile .card .card-comments .comments-collapse-toggle a,
+.profile .card .card-comments .comments-collapse-toggle span {padding-right: 5px; overflow: hidden; font-size: 12px; color: #999; text-overflow: ellipsis; white-space: nowrap; }
+.profile .card-comments .media-heading {font-size: 13px; font-weight: bold; }
+.profile .card.people {position: relative; display: inline-block; width: 170px; height: 300px; padding-top: 0; margin-left: 20px; overflow: hidden; vertical-align: top; }
+.profile .card.people:first-child {margin-left: 0; }
+.profile .card.people .card-top {position: absolute; top: 0; left: 0; display: inline-block; width: 170px; height: 150px; background-color: #ffffff; }
+ .profile .card.people .card-top.green {background-color: #53a93f; }
+ .profile .card.people .card-top.blue {background-color: #427fed; }
+.profile  .card.people .card-info .title {display: block; margin: 8px 14px 0 14px; overflow: hidden; font-size: 16px; font-weight: bold; line-height: 18px; color: #404040; }
+ .profile .card.people .card-info .desc {display: block; margin: 8px 14px 0 14px; overflow: hidden; font-size: 12px; line-height: 16px; color: #737373; text-overflow: ellipsis; }
+ .profile .card.people .card-bottom {position: absolute; bottom: 0; left: 0; display: inline-block; width: 100%; padding: 10px 20px; line-height: 29px; text-align: center; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+ .profile .card.hovercard {position: relative; padding-top: 0; overflow: hidden; text-align: center; background-color: rgba(214, 224, 226, 0.2); }
+.profile .card.hovercard .cardheader {background: url("../img/bg.jpg"); background-size: cover; height: 135px; }
+ .profile .card.hovercard .avatar {position: relative; top: -50px; margin-bottom: -50px; }
+.profile .card.hovercard .avatar img {width: 100px; height: 100px; max-width: 100px; max-height: 100px; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%; border: 5px solid rgba(255,255,255,0.5); }
+ .profile .card.hovercard .info {padding: 4px 8px 10px; } 
+ .profile .card.hovercard .info .title {color: #262626; font-size: 19px; line-height: 1; margin-bottom: 10px;}
+ .profile .card.hovercard .info .desc {overflow: hidden; font-size: 12px; line-height: 20px; color: #737373; text-overflow: ellipsis; } 
+ .profile .card.hovercard .bottom {padding: 0 20px; margin-bottom: 17px; }
+.profile .btn{ border-radius: 50%; width:32px; height:32px; line-height:18px;  }
+.profile {border-radius: 5px; box-shadow: 2px 2px 5px gray; margin: 0 auto; width: 265px;}
+
+.profile .list-group-item{color: gray; padding-left: 48px; text-align: left;}
+.profile .list-group-item span{color: #286090; font-size: 20px; left: 14px; position: absolute; top: 10px;}
