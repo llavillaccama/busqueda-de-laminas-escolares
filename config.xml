@@ -15,7 +15,8 @@
 	<content src="index.html" />
 	<access origin="*" />
 
-	<gap:plugin name="org.apache.cordova.inappbrowser"/>
+	<plugin name="org.apache.cordova.inappbrowser" source="pgb" spec="0.6.0" />
+
 
 
 
