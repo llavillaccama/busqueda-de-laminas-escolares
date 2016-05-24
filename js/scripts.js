@@ -30,12 +30,18 @@ jQuery(document).ready(function($) {
     console.log('Oops. Error was ' + error.message + ' (Code ' + error.code + ')');
     return true;
   }
+
+
+
+
   var db;
   var shortName='MyMobileApp';
   var version='0.1';
   var displayName='MyMobileApp';
   var maxSize = 65536;
   db = openDatabase(shortName,version,displayName,maxSize);
+
+
   db.transaction(
     function(transaction) {
       transaction.executeSql('DROP TABLE lamina',null,function(){console.log('Drop Succeeded');},function(){console.log('Drop Failed');});
@@ -189,43 +195,35 @@ db.transaction(
 
 jQuery(document).ready(function($) {
 
- function checkConnection() {
-  var networkState = navigator.connection.type;
-  var states = {};
-  states[Connection.UNKNOWN]  = 'Unknown connection';
-  states[Connection.ETHERNET] = 'Ethernet connection';
-  states[Connection.WIFI]     = 'WiFi connection';
-  states[Connection.CELL_2G]  = 'Cell 2G connection';
-  states[Connection.CELL_3G]  = 'Cell 3G connection';
-  states[Connection.CELL_4G]  = 'Cell 4G connection';
-  states[Connection.CELL]     = 'Cell generic connection';
-  states[Connection.NONE]     = 'No network connection';
 
-  alert('Connection type: ' + states[networkState]);
-}
+//http://laminas.soporte.website/lamina.json
 
-checkConnection();
 
 var fileTransfer = new FileTransfer();
-var uri = encodeURI("http://laminas.soporte.website/lamina.json");
+var uri = encodeURI("http://some.server.com/download.php");
+
 fileTransfer.download(
-  uri,
-  fileURL,
-  function(entry) {
-    console.log("download complete: " + entry.toURL());
-  },
-  function(error) {
-    console.log("download error source " + error.source);
-    console.log("download error target " + error.target);
-    console.log("upload error code" + error.code);
-  },
-  false,
-  {
-    headers: {
-      "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
+    uri,
+    fileURL,
+    function(entry) {
+        console.log("download complete: " + entry.fullPath);
+    },
+    function(error) {
+        console.log("download error source " + error.source);
+        console.log("download error target " + error.target);
+        console.log("upload error code" + error.code);
+    },
+    false,
+    {
+        headers: {
+            "Authorization": "Basic dGVzdHVzZXJuYW1lOnRlc3RwYXNzd29yZA=="
+        }
     }
-  }
-  );
+);
+
+
+
+
 });
 
 
