@@ -198,20 +198,21 @@ jQuery(document).ready(function($) {
 
 //http://laminas.soporte.website/lamina.json
 
-
 var fileTransfer = new FileTransfer();
-var uri = encodeURI("http://some.server.com/download.php");
+var uri = encodeURI("http://laminas.soporte.website/lamina.json");
 
 fileTransfer.download(
     uri,
     fileURL,
     function(entry) {
-        console.log("download complete: " + entry.fullPath);
+        console.log("download complete: " + entry.toURL());
+        alert("complete");
     },
     function(error) {
         console.log("download error source " + error.source);
         console.log("download error target " + error.target);
         console.log("upload error code" + error.code);
+        alert("error");
     },
     false,
     {
@@ -220,8 +221,6 @@ fileTransfer.download(
         }
     }
 );
-
-
 
 
 });
